@@ -1,10 +1,9 @@
 package com.wildrune;
 
 import com.wildrune.gui.EditorFrame;
+import org.pushingpixels.substance.api.skin.SubstanceNightShadeLookAndFeel;
 
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
+import javax.swing.*;
 
 /**
  * @author Mark van der Wal
@@ -18,11 +17,8 @@ public class Application {
 
         SwingUtilities.invokeLater(() -> {
             try {
-                //SubstanceBusinessBlackSteelLookAndFeel
-                //SubstanceCeruleanLookAndFeel
-                //SubstanceGeminiLookAndFeel
-                //SubstanceGraphiteLookAndFeel
-                UIManager.setLookAndFeel("org.pushingpixels.substance.api.skin.SubstanceBusinessBlackSteelLookAndFeel");
+                var laf = new SubstanceNightShadeLookAndFeel();
+                UIManager.setLookAndFeel(laf);
             } catch (Exception e) {
                 System.out.println("Substance skin failed to initialize");
             }
